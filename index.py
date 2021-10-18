@@ -1,6 +1,6 @@
 from fastapi import FastAPI
+from routes.index import blog
 app = FastAPI()
 
-@app.get("/")
-def read_something():
-    return {"message:":"Hello World"}
+app.include_router(blog)
+
